@@ -1,0 +1,16 @@
+tape_detector_node:
+  ros__parameters:
+    # Range filtering parameters
+    min_range: 1.0        # Minimum valid range in meters
+    max_range: 5.0        # Maximum valid range in meters
+    
+    # Intensity thresholding
+    intensity_threshold: 235.0  # Threshold to distinguish high vs low intensity
+                               # Points above this are considered retroreflective
+    
+    # Clustering parameters for high-intensity points
+    cluster_tolerance: 0.1      # Maximum distance between points in same cluster (meters)
+    min_cluster_size: 3         # Minimum points required to form valid cluster
+    
+    # Low-intensity feature search
+    search_radius: 0.1          # Search radius around HI centroid for LI points (meters)
